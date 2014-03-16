@@ -13,8 +13,7 @@
 	<t:product.list t:id="productList" start="start" itemsPerPage="itemsPerPage" />
 
 	<div style="border: solid 1px #999999; padding: 8px;">
-		<t:ui.pager total="pagerTotal" start="start" itemsPerPage="itemsPerPage"
-			linkTemplate="pagerTemplate" />
+		<t:ui.pager total="pagerTotal" start="start" n="itemsPerPage" linkTemplate="pagerTemplate" />
 	</div>
 
 </div>
