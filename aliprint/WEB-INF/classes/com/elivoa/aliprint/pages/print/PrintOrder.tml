@@ -1,0 +1,280 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:p="tapestry:parameter"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Print Order">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>圆通快递单</title>
+<!-- 
+<link href="../../css/pages/express-order-print.css" rel="stylesheet" type="text/css">
+<link href="../../css/pages/express-order-print.css" rel="stylesheet" type="text/css"
+	media="print">
+-->
+</head>
+<body>
+	<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
+		<embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0"></embed>
+	</object>
+	<!--背景-->
+	<div style="top: -3mm; left: -3mm; position: absolute;">
+		<img style="width: 231mm; height: 127mm;" src="${context:css/print/images/bg/bg_ytonew.jpg}" />
+	</div>
+	<!--/背景-->
+	<div id="form1" style="position: relative; width: 230mm; height: 127mm;">
+		<!--寄件人姓名-->
+		<div id="fromName" class="Prnt_all Prnt_name" style="position: absolute; left: 30mm; top: 24mm;"
+			contenteditable="true">${agent.senderName}</div>
+		<!--/寄件人姓名-->
+		<!--始发地-->
+		<!-- 
+		<div id="fromCityMain" class="Prnt_all Prnt_area"
+			style="position: absolute; left: 67mm; top: 24mm;" contenteditable="true">桐乡</div>
+		-->
+
+		<!--/始发地-->
+		<!--寄件人地址-->
+		<!-- 
+		<div id="fromProvicy" class="Prnt_all"
+			style="position: absolute; left: 28mm; top: 35mm; text-align: right; width: 14mm"
+			contenteditable="true">浙江</div>
+		<div id="fromCity" class="Prnt_all"
+			style="position: absolute; left: 46.5mm; top: 35mm; text-align: right; width: 14mm"
+			contenteditable="true">桐乡</div>
+		<div id="fromCountry" class="Prnt_all"
+			style="position: absolute; left: 64.8mm; top: 35mm; text-align: right; width: 13mm"
+			contenteditable="true"></div>
+		<div id="fromDistrict" class="Prnt_all"
+			style="position: absolute; left: 82mm; top: 35mm; text-align: right; width: 11mm"
+			contenteditable="true">濮院</div>
+		-->
+		<div id="fromAddress" class="Prnt_all"
+			style="position: absolute; left: 28mm; top: 30mm; width: 77mm; height: 20mm; text-align: left; font-size: 10pt;"
+			contenteditable="true">
+			<t:outputraw value="agent.addressWithNewLine" />
+		</div>
+
+		<!--/寄件人地址-->
+		<!--寄件人电话-->
+		<div id="fromPhone" class="Prnt_all" style="position: absolute; left: 40mm; top: 50mm;"
+			contenteditable="true">${agent.senderPhone}</div>
+		<!-- <div id="fromTel" class="Prnt_all" style="position: absolute; left: 90mm; top: 50mm;"
+			contenteditable="true">314500</div>
+			 -->
+		<!--/寄件人电话-->
+
+		<!--内件品名-->
+		<div class="Prnt_all"
+			style="position: absolute; left: 25mm; top: 66mm; width:30mm;text-align: center;font-size: ${contentFontSize}pt"
+			contenteditable="true">
+			<t:outputraw value="contentHTML" />
+		</div>
+		<!--/内件品名-->
+
+		<!--内件数量-->
+		<div class="Prnt_all" contenteditable="true"
+			style="position: absolute; left: 70mm; top: 65mm; text-align: center;">${realClothesCount}</div>
+		<!--/内件数量-->
+		<!--寄件人签名-->
+		<div id="fromNameMain" class="Prnt_all Prnt_name"
+			style="position: absolute; left: 62mm; top: 93mm; width:;" contenteditable="true">${agent.senderName}</div>
+		<!--/寄件人签名-->
+		<!--发件日期-->
+		<div class="Prnt_all" style="position: absolute; left: 74mm; top: 97mm; font-size: 10pt;"
+			contenteditable="true">${year}</div>
+		<div class="Prnt_all" style="position: absolute; left: 84mm; top: 97mm; font-size: 10pt;"
+			contenteditable="true">${month}</div>
+		<div class="Prnt_all" style="position: absolute; left: 91mm; top: 97mm; font-size: 10pt;"
+			contenteditable="true">${day}</div>
+		<!--/发件日期-->
+
+		<!--收件人姓名-->
+		<div id="buyerName" class="Prnt_all Prnt_name"
+			style="position: absolute; left: 125mm; top: 24mm;" contenteditable="true">
+			<!-- Name -->
+		</div>
+		<!--/收件人姓名-->
+		<!--收件地址-->
+		<div id="buyerAddress" class="Prnt_all"
+			style="position: absolute; left: 120mm; top: 33mm; text-align: left; width: 80mm; line-height: 1.8em"
+			contenteditable="true"></div>
+		<div id="BuyerAddrMain" class="Prnt_all"
+			style="position: absolute; left: 170mm; top: 12mm; text-align: center; width: 30mm; font-size: 20pt; font-family: 'SimHei'"
+			contenteditable="true">
+			<!-- 目的城市 -->
+		</div>
+		<!--/收件地址-->
+		<!--联系电话-->
+		<div id="buyerPhone" class="Prnt_all" style="position: absolute; left: 135mm; top: 50mm;"
+			contenteditable="true">${mobile}</div>
+		<div id="buyerTel" class="Prnt_all"
+			style="position: absolute; left: 180mm; top: 50mm; font-size: 10pt; white-space: nowrap"
+			contenteditable="true">${order.toPost}</div>
+		<!--/联系电话-->
+		<div class="Prnt_all"
+			style="position: absolute; font-weight: bold; left: 50mm; top: 106mm; font-size: 20pt; white-space: nowrap"
+			contenteditable="true">罗</div>
+	</div>
+	<div
+		style="margin-top: 40px; font-size: 16pt; border: solid 2px #424b50; margin: 8px; padding: 4px; color: #ed5736">
+		<a href="javascript:prn1_preview()">打印预览</a>
+	</div>
+
+	<!-- right side bar -->
+
+	<div style="position: absolute; right: 40px; top: 40px;">
+		<a href="javascript:fontSizeZoomout('fromAddress')">发件地址缩小</a> <a href="#">发件地址放大</a> <br />
+
+		<div style="border: solid 1px red; width: 320px; padding: 8px; margin: 4px;">
+			备注 &amp;&amp; 留言:
+			<t:if test="order.buyerFeedback">
+				<div class="note S-textB" style="border: solid 1px #177cb0; padding: 2px 4px; color: #424b50">
+					<strong>客户留言：</strong>${order.buyerFeedback}
+				</div>
+			</t:if>
+			<t:if test="order.buyerOrderMemo?.isValid()">
+				<div class="note S-textB" style="border: solid 1px #9d2932; padding: 2px 4px; color: #424b50">
+					<strong>偷窥客户的留言：</strong>[${order.buyerOrderMemo.remarkIcon}] ${order.buyerOrderMemo.remark}
+				</div>
+			</t:if>
+			<t:if test="order.sellerOrderMemo?.isValid()">
+				<div class="note S-textB">
+					<strong>备注信息：</strong>[${order.sellerOrderMemo.remarkIcon}] ${order.sellerOrderMemo.remark}
+				</div>
+			</t:if>
+		</div>
+
+		<div style="border: solid 1px red; width: 320px; padding: 8px; margin: 4px;">
+			<t:block id="sendSuccessBlock">
+				发货成功：圆通（${trackingNo}）
+			</t:block>
+			<h5>发货：（目前只支持圆通）</h5>
+			<t:zone elementName="div" t:id="sendZone" id="sendZone">
+				<t:form t:id="sendForm" zone="sendZone">
+					<t:hidden t:id="orderId" value="orderId" />
+					<t:label for="trackingNo">圆通</t:label>
+					<t:errors />
+					<t:textfield t:id="trackingNo" value="trackingNo" />
+					<t:submit>发货</t:submit>
+				</t:form>
+			</t:zone>
+
+		</div>
+
+	</div>
+
+
+	<p>
+		选择寄件人：<a href="javascript:fromPerson('李玉勋，13004211905')">李玉勋</a> <a
+			href="javascript:fromPerson('李，13004211803')">木子针织</a> <a
+			href="javascript:fromPerson('王爽，18638068666')">王爽</a> <a
+			href="javascript:fromPerson('mimi，13918116067')">小郁</a> <a
+			href="javascript:fromPerson('薛芳芝，13918613475')">吴凤仙</a> <a
+			href="javascript:fromPerson('麻克力诚品，18149733181')">如果代发</a> <a
+			href="javascript:fromPerson(' ，15061865737')">粉木耳</a> <a
+			href="javascript:fromPerson('coco，13738107510')">无乐乐天堂</a> <a
+			href="javascript:fromPerson('蔡能，13750855211')">sabersabre</a> <a
+			href="javascript:fromPerson('黄小姐，15017518248')">谢华强</a> <a
+			href="javascript:fromPerson('王睿，18611711447')">王睿</a> <a
+			href="javascript:fromPerson('赵芝晴，18959210037')">赵芝晴</a> <a
+			href="javascript:fromPerson('小牛仔，13680228703')">小牛仔</a> <a
+			href="javascript:fromPerson('孙小姐，13121931918')">孙小姐</a> <a
+			href="javascript:fromPerson('小娱乐，13955383483')">旧电影</a> <a
+			href="javascript:fromPerson('小白，15071466005')">小花卷</a> <a
+			href="javascript:fromPerson('桔子，18653165990')">桔子</a> <a
+			href="javascript:fromPerson('小徐，15257655191')">小徐</a>
+	</p>
+	<p>发件人地址：</p>
+	<div style="margin-top: 20px;">
+		<input id="orderInfo" type="text" size="100" value="${order.addressToSplit}" /> <a
+			id="generateOrder" href="#">拆分快递单</a>
+	</div>
+	<script language="javascript" type="text/javascript">
+		var LODOP; //声明为全局变量 
+		function prn1_preview() {
+			CreateOneFormPage();
+			LODOP.PREVIEW();
+		};
+		function CreateOneFormPage() {
+			LODOP = getLodop(document.getElementById('LODOP_OB'), document.getElementById('LODOP_EM'));
+			LODOP.SET_PRINT_PAGESIZE(0, 2310, 1270, "圆通快递单");
+			LODOP.SET_PRINT_STYLE("FontSize", 12);
+			LODOP.SET_PRINT_STYLE("Bold", 1);
+			LODOP.ADD_PRINT_HTM(0, 0, "100%", "100%", document.getElementById("form1").innerHTML);
+		};
+	</script>
+	<script type="text/javascript">
+		var generateOrder = document.getElementById("generateOrder");
+		var buyerAddress = document.getElementById("buyerAddress");
+		generateOrder.onclick = splitOrder;
+
+		function splitOrder() {
+			var orderInfo = document.getElementById("orderInfo");
+			var orderInfoArr = new Array();
+			orderInfoArr = orderInfo.value.split(",");
+			//alert(orderInfoArr[0]);
+			var buyerName = document.getElementById("buyerName");
+			var buyerPhone = document.getElementById("buyerPhone");
+			var buyerTel = document.getElementById("buyerTel");
+			buyerName.innerHTML = "";
+			buyerPhone.innerHTML = "";
+			// buyerTel.innerHTML = "";
+			buyerAddress.innerHTML = "";
+
+			buyerName.innerHTML = orderInfoArr[0];
+			buyerPhone.innerHTML = orderInfoArr[1] + " " + orderInfoArr[2];
+			buyerAddress.innerHTML = orderInfoArr[3];
+
+			var BuyerAddrMain = document.getElementById("BuyerAddrMain");
+			BuyerAddrMain.innerHTML = "";
+
+			var splitCity = orderInfoArr[3].split("市");
+			//alert (splitCity);
+			if (splitCity[0].indexOf("省") != -1) {
+				//alert(1);
+				var dest = splitCity[0].split("省 ")[1];
+				if (dest !== "上海") {
+					BuyerAddrMain.innerHTML = dest;
+				}
+			} else {
+				var dest = splitCity[0];
+				if (dest !== "上海") {
+					BuyerAddrMain.innerHTML = dest;
+				}
+			}
+		}
+
+		function fromPerson(form_name) {
+			var fromName = document.getElementById("fromName");
+			var fromCityMain = document.getElementById("fromCityMain");
+			var fromProvicy = document.getElementById("fromProvicy");
+			var fromCity = document.getElementById("fromCity");
+			var fromCountry = document.getElementById("fromCountry");
+			var fromDistrict = document.getElementById("fromDistrict");
+			var fromAddress = document.getElementById("fromAddress");
+			var fromPhone = document.getElementById("fromPhone");
+			var fromTel = document.getElementById("fromTel");
+			var fromNameMain = document.getElementById("fromNameMain");
+			fromName.innerHTML = "";
+			fromCityMain.innerHTML = "";
+			fromProvicy.innerHTML = "";
+			fromCity.innerHTML = "";
+			fromCountry.innerHTML = "";
+			fromDistrict.innerHTML = "";
+			fromAddress.innerHTML = "";
+			fromPhone.innerHTML = "";
+			fromTel.innerHTML = "";
+			fromNameMain.innerHTML = "";
+			var person_info = new Array();
+			person_info = form_name.split("，");
+			fromName.innerHTML = person_info[0];
+			fromNameMain.innerHTML = person_info[0];
+			fromPhone.innerHTML = person_info[1];
+		}
+		function fontSizeZoomout(add) {
+
+		}
+
+		// call on load
+		splitOrder();
+	</script>
+</body>
+</html>

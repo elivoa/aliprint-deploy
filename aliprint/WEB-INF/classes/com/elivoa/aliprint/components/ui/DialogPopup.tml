@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<t:delegate to="container" />
+
+	<t:block id="withframe">
+		<div id="${context.dialogId}" class="modal hide fade" keyboard="false" style="display: none;">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal">x</button>
+				<h3>
+					<t:delegate to="title" />
+				</h3>
+			</div>
+			<div id="${context.refreshZone}" class="modal-body t-zone">Loading...</div>
+			<div class="modal-footer disable"></div>
+		</div>
+	</t:block>
+
+	<t:block id="nonframe">
+		<div id="${context.dialogId}" class="modal hide fade" style="display: none;">
+			<div id="${context.dialogZone}" class="t-zone ">
+				<div class="modal-header"></div>
+				<div class="modal-body t-zone">Loading...</div>
+				<div class="modal-footer"></div>
+			</div>
+		</div>
+	</t:block>
+
+	<t:block id="resourceBody">
+		<t:trigger event="pushEnv" />
+		<t:body />
+		<t:trigger event="popEnv" />
+	</t:block>
+
+</t:container>

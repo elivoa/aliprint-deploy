@@ -1,0 +1,51 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:content>
+	<div style="border: 20px solid #f5f5dc;">
+		<div>
+			<h1>
+				我的代理们 <span style="margin: 0 20px;"></span> <small><t:pagelink page="SellAgent/Create">添加代理</t:pagelink></small>
+			</h1>
+			<table border="1" style="border-collapse: collapse;">
+				<thead>
+					<tr>
+						<td>ID</td>
+						<td>阿里ID</td>
+						<td>旺旺ID</td>
+						<td>公司</td>
+						<td>姓名</td>
+
+						<td>发件人</td>
+						<td>电话</td>
+						<td>自定义内容</td>
+
+						<td>店铺（规模）</td>
+
+						<td>加入时间</td>
+						<td>更新时间</td>
+						<td>操作</td>
+					</tr>
+				</thead>
+				<tbody>
+					<t:loop source="agents" value="agent">
+						<tr>
+							<td>${agent.id}</td>
+							<td>${agent.aliId}</td>
+							<td>${agent.contactWangwang}</td>
+							<td>${agent.company}</td>
+							<td>${agent.name}</td>
+							<td>${agent.senderName}</td>
+							<td>${agent.senderPhone}</td>
+							<td><t:outputraw value="agent.addressWithNewLine" /></td>
+							<td>${agent.shopAddress}(${agent.shopScale})</td>
+							<td>${agent.updateTime}</td>
+							<td>${agent.createTime}</td>
+							<td><t:pagelink page="sellagent/create" context="agent.id">修改</t:pagelink></td>
+						</tr>
+					</t:loop>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</t:content>
+</html>

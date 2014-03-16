@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<t:zone elementName="div" t:id="zone" id="prop:clientId">
+		<ul class="nav nav-tabs ${size}">
+			<t:loop source="tabs" value="tab">
+				<li class="${selectedStyleName}"><t:eventlink event="changeTab" context="tab.blockName" zone="prop:clientId">
+						${tab.name}
+					</t:eventlink>
+				</li>
+			</t:loop>
+		</ul>
+
+		<t:delegate to="content" />
+
+	</t:zone>
+
+</t:container>

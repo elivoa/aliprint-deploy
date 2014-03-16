@@ -1,0 +1,48 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:content>
+	<div style="border: 20px solid #f5f5dc;">
+		<div>
+			<div>
+				<strong><em>产品列表</em></strong> &lt;&lt;一共&nbsp;${products.total} 条产品
+			</div>
+
+			<table border="0" style="border-collapse: collapse; font-size: 14px;">
+				<thead>
+					<tr>
+						<td>ID</td>
+						<td>图</td>
+						<td>Subject</td>
+						<td>Alias</td>
+						<td>QualityLevel</td>
+						<td>Weight</td>
+						<td>Status</td>
+					</tr>
+				</thead>
+				<tbody>
+					<t:loop source="products.returns" value="product">
+						<tr style="padding-bottom: 12px; margin-bottom: 12px; border-bottom: solid 1px #ddd">
+							<td align="right">${product.offerId}<br /> Stars:${product.qualityLevel} <br />
+								Price:${product.unitPriceDouble}
+							</td>
+							<td><img width="64" style="border: solid 1px #aaa; padding: 1px;"
+								src="${product.thumbnail}" /></td>
+
+
+							<td style="padding: 8px 12px; width: 200px;"><a href="http://detail.1688.com/offer/${product.offerId}.html"
+								target="_black">${product.subject}</a></td>
+							<td><div class="A-alias">
+									<input type="text" class="alias" value="${product.alias}" productId="${product.offerId}" /><a
+										class="button" href="javascript:void(0);"></a>
+								</div></td>
+							<td></td>
+							<td>${product.productUnitWeight}</td>
+							<td>${product.offerStatus}</td>
+						</tr>
+					</t:loop>
+				</tbody>
+			</table>
+
+		</div>
+	</div>
+</t:content>
+</html>

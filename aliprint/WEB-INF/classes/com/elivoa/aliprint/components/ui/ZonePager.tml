@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<div class="pagination tiny ${theme}">
+		<ul>
+			<t:loop source="looplist" value="loopindex">
+				<li class="${active }">
+					<t:eventlink zone="^" context="loopindex" event="gotoPage" anchor="${anchorName }">${loopindex}</t:eventlink>
+				</li>
+			</t:loop>
+		</ul>
+	</div>
+</t:container>

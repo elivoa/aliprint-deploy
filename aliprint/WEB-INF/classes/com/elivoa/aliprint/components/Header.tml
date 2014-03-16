@@ -1,0 +1,14 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:content>
+	<div class="Hd-logo" style="color: white; font-size: 14px;">木子logo</div>
+	<div class="Hd-toolbar" style="color: white; float: right">
+		您好，<a href="#">${loginId}</a>! <a href="#">退出</a>
+		<div class="menu" style="display: none">
+			<ul>
+				<li t:type="loop" source="pageNames" value="pageName"
+					class="prop:classForPageName"><t:pagelink page="prop:pageName">${pageName}</t:pagelink></li>
+			</ul>
+		</div>
+	</div>
+</t:content>
+</html>

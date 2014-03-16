@@ -1,0 +1,109 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:content>
+
+	<div>快递单打印: 共计 ${orders.total} 条。</div>
+	<ul class="M_list">
+
+		<t:loop source="orders.models" value="order">
+			<li>
+				<table class="M_tbl Pr_list">
+					<tr>
+						<td class="header" colspan="5"><a class="detail" target="_black"
+							href="${order.orderDetailsLink}">查看详情&raquo;</a> <input type="checkbox" /> <span
+							class="no">订单号：${order.id}</span> <span class="S-vline S-textB">|</span> <span class="time">付款时间：${order.gmtPayment}</span>
+							<span class="S-vline S-textB">|</span> <a href="#" class="company S-linkB">${order.buyerCompanyName}</a>
+							<span class="S-vline S-textB">|</span> <a href="#" class="wangwang S-linkB"><i
+								class="Ico-wangwang"></i>${order.buyerLoginId}</a></td>
+					</tr>
+
+					<t:loop source="order.entities" value="entity" index="index">
+						<tr>
+							<td valign="top">
+								<div class="product">
+									<div class="M_img_50">
+										<a href="#"><img src="${entity.mainSummImageUrl}" /></a>
+									</div>
+									<div class="info">
+										<p>
+											<a href="http://detail.1688.com/offer/${entity.sourceId}.html" target="_black">${entity.shortName}</a>
+											<t:if test="entityStatusStr">
+												<span style="font-size:16px;color:#9d2932">【${entityStatusStr}】</span>
+											</t:if>
+										</p>
+										<p class="S-textB">
+											颜色：<strong>${entity.specInfo.get('颜色')}</strong>
+										</p>
+										<p class="S-textB">
+											尺码：<strong>${entity.specInfo.get('尺码')}</strong>
+										</p>
+									</div>
+									<t:if test="isSend">
+										<div class="send"></div>
+									</t:if>
+								</div>
+							</td>
+							<td width="40" align="center">
+								<div class="num">
+									<t:outputraw value="entityQuantityHTML" />
+								</div>
+							</td>
+
+							<t:if test="isFirstEntity">
+								<td rowspan="${order.entities.size()}" width="80">
+									<div class="S-textB">${order.partlyDelivery}</div>
+								</td>
+								<td rowspan="${order.entities.size()}" width="300">
+									<div>
+										<strong>${order.toFullname}</strong>，${order.toMobile}，${order.toArea} (${order.toPost})
+									</div> <t:if test="order.buyerFeedback">
+										<div class="note S-textB"
+											style="border: solid 1px #177cb0; padding: 2px 4px; color: #424b50">
+											<strong>客户留言：</strong>${order.buyerFeedback}
+										</div>
+									</t:if> <t:if test="order.buyerOrderMemo?.isValid()">
+										<div class="note S-textB"
+											style="border: solid 1px #9d2932; padding: 2px 4px; color: #424b50">
+											<strong>偷窥客户的留言：</strong>[${order.buyerOrderMemo.remarkIcon}]
+											${order.buyerOrderMemo.remark}
+										</div>
+									</t:if> <t:if test="order.sellerOrderMemo?.isValid()">
+										<div class="note S-textB">
+											<strong>备注信息：</strong>[${order.sellerOrderMemo.remarkIcon}]
+											${order.sellerOrderMemo.remark}
+										</div>
+									</t:if>
+								</td>
+								<td rowspan="${order.entities.size()}" width="100">
+									<div>
+										<i class="Ico-print"></i>
+										<t:pagelink page="print/order" context="order.id" target="_blank">打印快递单</t:pagelink>
+									</div>
+									<div>
+										<i class="Ico-tracking"></i> <a href="#">输入单号</a>
+									</div>
+								</td>
+							</t:if>
+						</tr>
+
+					</t:loop>
+
+					<tr>
+						<td class="footer" colspan="5">
+							<div class="total">
+								合计：<strong>${order.totalProducts}</strong> 件 <span class="S-price">${order.sumPaymentDouble}</span>元<span
+									class="S-textB">（运费${order.carriageDouble}元）</span>
+							</div>
+							<div>
+								<span class="from">发件人： <t:if test="order.sellAgent">
+										${order.sellAgent.senderName} ${order.sellAgent.senderPhone}
+									</t:if>
+								</span> <a class="S-linkB" href="#"><i class="Ico-edit"></i>编辑发件人</a>
+							</div>
+						</td>
+					</tr>
+				</table>
+			</li>
+		</t:loop>
+	</ul>
+</t:content>
+</html>

@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<t:body />
+
+	<t:delegate to="trigger" />
+
+	<t:block id="triggerTemplate">
+		<a id="${dialogContext.clientId}" class="${triggerLinkStyle}" data-toggle="modal"
+			href="#${dialogContext.dialogId}"> <t:delegate to="label" /> </a>
+	</t:block>
+
+</t:container>

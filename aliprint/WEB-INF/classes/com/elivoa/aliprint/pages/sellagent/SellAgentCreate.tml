@@ -1,0 +1,27 @@
+<html t:type="layout" xmlns:p="tapestry:parameter"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Alibaba Smart Print System">
+
+<!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+<p>我的代理们</p>
+
+<div>
+	<t:beaneditform t:id="editForm" object="agent" submitLabel="提交">
+		<p:id>
+			<t:hidden t:id="id" value="agent.id" />
+		</p:id>
+		<p:address>
+			<t:label for="address" />
+			<t:textarea t:id="address" value="agent.address" rows="6" cols="50" />
+		</p:address>
+		<p:note>
+			<t:label for="note" />
+			<t:textarea t:id="note" value="agent.note" rows="6" cols="50" />
+		</p:note>
+		<p:priceNote>
+			<t:label for="priceNote" />
+			<t:textarea t:id="priceNote" value="agent.priceNote" rows="6" cols="50" />
+		</p:priceNote>
+	</t:beaneditform>
+</div>
+</html>

@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<t:container xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd" xmlns:p="tapestry:parameter">
+
+	<div class="container-fluid none">
+
+		<div id="${progressBarId}" class="progress progress-info progress-striped actived">
+			<div class="bar" style="width: 1%;"></div>
+		</div>
+
+		<t:zone elementName="div" t:id="zone" id="${zoneId}">
+			<t:outputraw value="message" />
+		</t:zone>
+
+	</div>
+</t:container>
