@@ -244,24 +244,28 @@
 
 		function fromPerson(form_name) {
 			var fromName = document.getElementById("fromName");
+			/*
 			var fromCityMain = document.getElementById("fromCityMain");
 			var fromProvicy = document.getElementById("fromProvicy");
 			var fromCity = document.getElementById("fromCity");
 			var fromCountry = document.getElementById("fromCountry");
 			var fromDistrict = document.getElementById("fromDistrict");
+			*/
 			var fromAddress = document.getElementById("fromAddress");
 			var fromPhone = document.getElementById("fromPhone");
 			var fromTel = document.getElementById("fromTel");
 			var fromNameMain = document.getElementById("fromNameMain");
 			fromName.innerHTML = "";
+			/*
 			fromCityMain.innerHTML = "";
-			fromProvicy.innerHTML = "";
+			fromProvicy.innerHTML = ""; 
 			fromCity.innerHTML = "";
 			fromCountry.innerHTML = "";
-			fromDistrict.innerHTML = "";
+			fromDistrict.innerHTML = ""; 
+			*/
 			fromAddress.innerHTML = "";
 			fromPhone.innerHTML = "";
-			fromTel.innerHTML = "";
+			/* fromTel.innerHTML = ""; */
 			fromNameMain.innerHTML = "";
 			var person_info = new Array();
 			person_info = form_name.split("，");
