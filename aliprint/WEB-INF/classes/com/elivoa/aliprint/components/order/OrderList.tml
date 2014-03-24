@@ -30,12 +30,16 @@
 												<span style="font-size:16px;color:#9d2932">【${entityStatusStr}】</span>
 											</t:if>
 										</p>
-										<p class="S-textB">
-											颜色：<strong>${entity.specInfo.get('颜色')}</strong>
-										</p>
-										<p class="S-textB">
-											尺码：<strong>${entity.specInfo.get('尺码')}</strong>
-										</p>
+										<t:if test="entityColor">
+											<p class="S-textB">
+												颜色：<strong>${entityColor}</strong>
+											</p>
+										</t:if>
+										<t:if test="entitySize">
+											<p class="S-textB">
+												尺码：<strong>${entitySize}</strong>
+											</p>
+										</t:if>
 									</div>
 									<t:if test="isSend">
 										<div class="send"></div>
