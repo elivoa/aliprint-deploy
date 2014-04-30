@@ -1,0 +1,47 @@
+
+<div id="ecfMenu">
+	<ul class="MenuList">
+		<li class=""><a href="/">首页</a></li>
+		<li><a href="http://www.muzizhenzhi.com/gallery--p,0-grid.html">全部商品</a></li>
+		<li><a
+			href="http://www.muzizhenzhi.com/page-%E6%95%B0%E6%8D%AE%E5%8C%85%E4%B8%8B%E8%BD%BD.html">数据包下载</a></li>
+		<li><a href="http://www.muzizhenzhi.com/member.html">会员中心</a></li>
+		<li><a href="http://www.muzizhenzhi.com/page-helpcenter.html">帮助中心</a></li>
+		<li><a href="http://www.muzizhenzhi.com/page-cominfo.html">关于木子</a></li>
+		<li class=""><a
+			href="http://www.muzizhenzhi.com/page-%E6%B5%8B%E8%AF%95%E9%A1%B5%E9%9D%A2.html">测试页面</a></li>
+		<li class=""><a href="http://www.muzizhenzhi.com/presale.html">预售</a></li>
+	</ul>
+	<script>
+		var objMenu = document.getElementById("Menu");
+		if (objMenu) {
+			var objs = objMenu.getElementsByTagName("li");
+			var currentPage = document.location.href.toString();
+			currentPage = currentPage.substr(currentPage.lastIndexOf("/") + 1, currentPage.length);
+			if (currentPage.length <= 1) {
+				objs[0].className = "curs";
+			} else {
+				for (var i = 0; i < objs.length; i++) {
+					var page = objs[i].getElementsByTagName("a")[0].href;
+					page = page.substr(page.lastIndexOf("/") + 1, page.length);
+					if (page == currentPage) {
+						objs[i].className = "curs";
+					} else {
+						objs[i].className = "";
+					}
+				}
+			}
+		}
+		$ES('.MenuList li').addEvents({
+			'mouseenter' : function(e) {
+				this.addClass('over');
+			},
+			'mouseleave' : function(e) {
+				this.removeClass('over');
+			}
+		});
+		if ($('widgets_579_showMore')) {
+			$('widgets_579_showMore').setOpacity(.8);
+		}
+	</script>
+</div>
