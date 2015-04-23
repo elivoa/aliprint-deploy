@@ -11,13 +11,14 @@
 -->
 </head>
 <body>
-<table cellpadding="8"></table>
+	<table cellpadding="8"></table>
 	<object id="LODOP_OB" classid="clsid:2105C259-1E0C-4534-8141-A753534CB4CA" width="0" height="0">
 		<embed id="LODOP_EM" type="application/x-print-lodop" width="0" height="0"></embed>
 	</object>
 	<!--背景-->
 	<div style="top: -3mm; left: -3mm; position: absolute;">
-		<img style="width: 231mm; height: 127mm;" src="${context:css/print/images/bg/bg_ytonew.jpg}" />
+		<img style="width: 231mm; height: 127mm;"
+			src="${context:static/css/print/images/bg/bg_ytonew.jpg}" />
 	</div>
 	<!--/背景-->
 	<div id="form1" style="position: relative; width: 230mm; height: 127mm;">
@@ -112,7 +113,7 @@
 		<!--/联系电话-->
 		<div class="Prnt_all"
 			style="position: absolute; font-weight: bold; left: 50mm; top: 106mm; font-size: 20pt; white-space: nowrap"
-			contenteditable="true">58</div>
+			contenteditable="true">512</div>
 	</div>
 	<div
 		style="margin-top: 40px; font-size: 16pt; border: solid 2px #424b50; margin: 8px; padding: 4px; color: #ed5736">
@@ -251,7 +252,7 @@
 			var fromCity = document.getElementById("fromCity");
 			var fromCountry = document.getElementById("fromCountry");
 			var fromDistrict = document.getElementById("fromDistrict");
-			*/
+			 */
 			var fromAddress = document.getElementById("fromAddress");
 			var fromPhone = document.getElementById("fromPhone");
 			var fromTel = document.getElementById("fromTel");
@@ -263,7 +264,7 @@
 			fromCity.innerHTML = "";
 			fromCountry.innerHTML = "";
 			fromDistrict.innerHTML = ""; 
-			*/
+			 */
 			fromAddress.innerHTML = "";
 			fromPhone.innerHTML = "";
 			/* fromTel.innerHTML = ""; */

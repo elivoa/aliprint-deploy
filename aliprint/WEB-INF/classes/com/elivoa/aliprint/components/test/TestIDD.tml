@@ -1,0 +1,6 @@
+<html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
+<t:content>
+	<t:eventlink event="ABC" id="${ClientId}dd">TestLink1</t:eventlink>
+	<t:eventlink event="ABC" id="${ClientId}ss">TestLink2 {{ClientId}}</t:eventlink>
+</t:content>
+</html>

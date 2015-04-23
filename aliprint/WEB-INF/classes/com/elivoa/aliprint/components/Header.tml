@@ -1,14 +1,25 @@
 <html xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd">
 <t:content>
 	<div class="Hd-logo" style="color: white; font-size: 14px;">木子logo</div>
+
 	<div class="Hd-toolbar" style="color: white; float: right">
-		您好，<a href="#">${loginId}</a>! <a href="#">退出</a>
+		您好，<a href="#">${loginId}</a>!
+		<t:eventlink event="logout">退出</t:eventlink>
 		<div class="menu" style="display: none">
 			<ul>
-				<li t:type="loop" source="pageNames" value="pageName"
-					class="prop:classForPageName"><t:pagelink page="prop:pageName">${pageName}</t:pagelink></li>
+				<li t:type="loop" source="pageNames" value="pageName" class="prop:classForPageName"><t:pagelink
+						page="prop:pageName">${pageName}</t:pagelink></li>
 			</ul>
 		</div>
 	</div>
+
+	<div class="Hd-toolbar"
+		style="color: white; float: right; border: solid 1px green; margin: 0px 8px; padding: 3px; background-color: #333">
+		切换账号：
+		<t:loop source="switchAccounts" value="acc">
+			<t:eventlink event="SwitchAccount" context="acc" __onclick="return confirm('确认切换么？')">${acc}</t:eventlink> |
+		</t:loop>
+	</div>
+
 </t:content>
 </html>

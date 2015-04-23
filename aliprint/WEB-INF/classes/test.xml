@@ -1,0 +1,47 @@
+<RequestOrder>
+	<clientID>K57345192</clientID>
+	<logisticProviderID>YTO</logisticProviderID>
+	<customerId>K57345192</customerId>
+	<txLogisticID>K5734519236344716</txLogisticID>
+
+	<!-- 
+	
+	<itemsValue>1</itemsValue>
+	<remark>1</remark>
+	<deliverNo>1</deliverNo>
+	<totalValue>1</totalValue>
+	<itemsWeight>1</itemsWeight>
+	<packageOrNot>1</packageOrNot>
+	<orderSource>1</orderSource>
+	 -->
+	
+	<orderType>1</orderType>
+	<insuranceValue>0.0</insuranceValue>
+	<totalServiceFee>0.0</totalServiceFee>
+	<goodsValue>0.0</goodsValue>
+	<special>1</special>
+	<flag>1</flag>
+	<serviceType>1</serviceType>
+	<type>1</type>
+	<codSplitFee>0.0</codSplitFee>
+	
+	<sender>
+		<name><![CDATA[高博]]></name>
+		<postCode>333</postCode>
+		<phone>234234</phone>
+		<mobile>13811055427</mobile>
+		<prov>上海</prov>
+		<city>上海</city>
+		<address>asldjfa</address>
+	</sender>
+	<receiver>
+		<name><![CDATA[高博]]></name>
+		<postCode>333</postCode>
+		<phone>234234</phone>
+		<mobile>13811055427</mobile>
+		<prov>上海</prov>
+		<city>上海</city>
+		<address>asldjfa</address>
+	</receiver>
+
+</RequestOrder>

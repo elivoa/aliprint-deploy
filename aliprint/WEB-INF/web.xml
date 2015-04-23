@@ -13,14 +13,15 @@
 	</context-param>
 
 	<!-- Specify some additional Modules for two different execution modes: 
-		development and qa. Remember that the default execution mode is production -->
+		development and qa. Remember that the default execution mode is production
 	<context-param>
 		<param-name>tapestry.development-modules</param-name>
 		<param-value>
 			com.elivoa.services.DevelopmentModule
 		</param-value>
 	</context-param>
-
+ 	-->
+ 	
 	<context-param>
 		<param-name>tapestry.qa-modules</param-name>
 		<param-value>

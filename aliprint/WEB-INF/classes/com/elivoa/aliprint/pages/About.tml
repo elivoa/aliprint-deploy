@@ -1,7 +1,12 @@
 <html t:type="layout" title="About aliprint"
-      xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
-      xmlns:p="tapestry:parameter">
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
 
-    <p>About aliprint application ...</p>
+<p>About aliprint application ...</p>
 
+<div>
+	<t:test.TestIDD msg="literal:abc 111" msg2="msg2"></t:test.TestIDD>
+	<t:loop source="source">
+		<t:test.TestIDD msg="literal:abc 222" msg2="msg2" id="ClientId" www="ddd"></t:test.TestIDD>
+	</t:loop>
+</div>
 </html>

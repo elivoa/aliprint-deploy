@@ -1,20 +1,23 @@
-<html t:type="layout" xmlns:p="tapestry:parameter"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Alibaba Smart Print System">
+<html xmlns:p="tapestry:parameter" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/bs" title="Alibaba Smart Print System" page="product-names">
 
 <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-<p>${message:greeting}</p>
-
-
-<div>
-	<ul>
-		<li>Product Ali Id, Product Serial No., names, alias.</li>
-	</ul>
-	<t:product.list t:id="productList" start="start" itemsPerPage="itemsPerPage" />
-
-	<div style="border: solid 1px #999999; padding: 8px;">
-		<t:ui.pager total="pagerTotal" start="start" n="itemsPerPage" linkTemplate="pagerTemplate" />
-	</div>
-
+<div class="page-header">
+	<h3>${message:greeting}</h3>
 </div>
+
+<div class="container" style="margin-left: 1.6em; margin-right: 0;">
+	<div class="row">
+		<div class="col-md-9">
+			<t:product.list t:id="productList" start="start" itemsPerPage="itemsPerPage" />
+
+			<div style="border: solid 1px #999999; padding: 8px; margin: 4px;">
+				<t:ui.pager total="pagerTotal" start="start" n="itemsPerPage" linkTemplate="pagerTemplate" />
+			</div>
+		</div>
+	</div>
+</div>
+
+
 </html>

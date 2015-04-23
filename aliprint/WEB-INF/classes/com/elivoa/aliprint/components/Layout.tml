@@ -22,7 +22,7 @@ Description: A Web 2.0 design with fluid width suitable for blogs and small webs
 		<t:header />
 	</div>
 	<div class="F-leftmenu">
-		<t:leftNav />
+		<t:leftNav currentPage="page" />
 	</div>
 
 	<div class="F-mainbox">
@@ -47,8 +47,10 @@ Description: A Web 2.0 design with fluid width suitable for blogs and small webs
 	</div>
 
 	<!-- start footer -->
-	<div class="footer">
-		<p class="legal">&copy;2013 com.elivoa. All Rights Reserved.</p>
+	<div class="container-fluid" style="margin-left:200px;">
+		<div class="footer">
+			<p class="legal">&copy;2013 com.elivoa. All Rights Reserved.</p>
+		</div>
 	</div>
 	<!-- end footer -->
 </body>

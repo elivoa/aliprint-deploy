@@ -1,12 +1,16 @@
-<html t:type="layout" xmlns:p="tapestry:parameter"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Alibaba Smart Print System">
+<html xmlns:p="tapestry:parameter" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/bs" title="Alibaba Smart Print System" page="sellagent">
 
 <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
 
-<p>我的代理们</p>
+<div class="page-header">
+	<h3>
+		我的代理们 <small>TODO 有 N 个</small>
+	</h3>
+</div>
 
 <div>
 	<t:sellagent.list t:id="agentsList" start="start" itemsPerPage="itemsPerPage" />
-
 </div>
+
 </html>

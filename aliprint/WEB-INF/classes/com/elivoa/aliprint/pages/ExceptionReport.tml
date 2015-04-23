@@ -1,0 +1,127 @@
+<html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
+	xmlns:p="tapestry:parameter" t:title="Error | AMiner.org">
+
+<head>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+</head>
+
+<div id="container" class="container">
+
+	<div class="row">
+		<div class="offset2 span6">
+			<div class="logo">
+				<t:pagelink page="index">
+				</t:pagelink>
+			</div>
+
+			<div class="errmsg">
+				<t:if test="isUnderMaintenance">
+					<p>
+						AMiner.org is now under Maintenance. <br />Please try later.
+					</p>
+					<p:else>
+						<t:if test="is404">
+							<span style="font-size: 48px; margin-right: 40px;">404</span> Page not found !
+					<p:else>
+						系统错误：
+						<a href="${authurl}">请重新验证登陆试试！</a>
+							</p:else>
+						</t:if>
+					</p:else>
+				</t:if>
+			</div>
+
+		</div>
+	</div>
+
+	<div class="row">
+		<div class="offset2 span6">
+			<div class="search_box"></div>
+
+		</div>
+	</div>
+
+	<div class="clear" />
+
+</div>
+
+
+<t:zone elementName="div" t:id="exceptionzone" id="exceptionZone" class="container-fluid"
+	stylex="color:white; border-top:solid 1px #ddd;color:black;padding: 0 20px 0 40px;background-color:white;${detailCss}">
+
+	<div class="page-header small">
+		<h1 class="t-exception-report floatl">An unexpected application exception has occurred.</h1>
+	</div>
+
+	<div class="clear"></div>
+
+	<t:if test="!showDetailedException">
+
+		<div class="row-fluid">
+			<div class="span">
+				<p>${rootException.message}</p>
+			</div>
+		</div>
+
+		<p:else>
+
+			<div class="row-fluid">
+				<div class="span12">
+					<p>${rootException.message}</p>
+				</div>
+			</div>
+
+			<div class="row-fluid">
+				<div class="span12" style="padding-left: 24px;">
+					<t:exceptiondisplay exception="rootException" />
+				</div>
+			</div>
+
+			<div class="t-env-data">
+
+				<h2>Tapestry Framework</h2>
+				<dl>
+					<dt>Tapestry Version</dt>
+					<dd>${tapestryVersion}</dd>
+					<dt>Application Version</dt>
+					<dd>${applicationVersion}</dd>
+				</dl>
+
+				<h2>Request</h2>
+				<t:renderobject object="request" />
+
+				<t:if test="hasSession">
+					<h2>Session</h2>
+					<dl>
+						<t:loop source="session.attributeNames" value="attributeName">
+							<dt>${attributeName}</dt>
+							<dd>
+								<t:renderobject object="attributeValue" />
+							</dd>
+						</t:loop>
+					</dl>
+				</t:if>
+
+				<h2>System Properties</h2>
+				<dl>
+					<t:loop source="systemProperties" value="propertyName">
+						<dt>${propertyName}</dt>
+						<dd>
+							<t:if test="! complexProperty">
+                                    ${propertyValue}
+                                    <p:else>
+									<ul>
+										<li t:type="loop" source="complexPropertyValue" value="var:path">${var:path}</li>
+									</ul>
+								</p:else>
+							</t:if>
+						</dd>
+					</t:loop>
+				</dl>
+
+			</div>
+		</p:else>
+	</t:if>
+</t:zone>
+</html>
+

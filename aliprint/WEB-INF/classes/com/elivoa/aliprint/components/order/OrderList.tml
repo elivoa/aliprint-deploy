@@ -27,7 +27,7 @@
 										<p>
 											<a href="http://detail.1688.com/offer/${entity.sourceId}.html" target="_black">${entity.shortName}</a>
 											<t:if test="entityStatusStr">
-												<span style="font-size:16px;color:#9d2932">【${entityStatusStr}】</span>
+												<span style="font-size: 16px; color: #9d2932">【${entityStatusStr}】</span>
 											</t:if>
 										</p>
 										<t:if test="entityColor">
@@ -78,6 +78,11 @@
 									</t:if>
 								</td>
 								<td rowspan="${order.entities.size()}" width="100">
+									<div>
+										<i class="Ico-print"></i>
+										<t:pagelink page="print/electronicorder" context="order.id" target="_blank">电子面单</t:pagelink>
+										<sup style="color: red">NEW</sup>
+									</div>
 									<div>
 										<i class="Ico-print"></i>
 										<t:pagelink page="print/order" context="order.id" target="_blank">打印快递单</t:pagelink>

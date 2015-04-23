@@ -1,0 +1,41 @@
+@CHARSET "UTF-8";
+
+.logo {
+	padding: 20px 12px;
+}
+
+.errmsg {
+	font-size: 20px; padding: 2px 12px 18px 58px;
+}
+
+#srch_con_r input {
+	width: 96px;
+}
+/*
+.m_box {
+	margin: 100px auto; width: 600px;
+}
+
+.m_box .cry {
+	font-size: 64px; font-family: serif; font-weight: bold; color: #666; width: 80px; margin: auto; float: left
+}
+
+
+.m_box .admin_key {
+	margin-top: 60px; font-size: 16px;
+}
+
+.logo {
+	display: block; width: 211px; height: 30px; background: url(/res/images/common/header/logo.png) no-repeat; float: left;
+	margin-top: 60px; margin-bottom: 20px; margin-left: -20px;
+}
+
+.floatl {
+	float: left
+}
+
+.clear {
+	clear: both
+}
+
+*/

@@ -1,0 +1,26 @@
+<html xmlns:p="tapestry:parameter" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout/bs" title="Alibaba Smart Print System" page="order-sync">
+
+<!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
+
+
+<div class="container-fluid">
+	<div class="page-header">
+		<h3>临时页面：订单同步状态</h3>
+	</div>
+
+	<div class="row">
+		<ul class="list-group">
+			<li class="list-group-item"><em>NOTE: </em>暂时只测试同步一段时间之内的订单。</li>
+			<li class="list-group-item">Start Time: ${startTime }</li>
+			<li class="list-group-item">End Time: ${endTime }</li>
+
+		</ul>
+
+
+
+	</div>
+</div>
+
+
+</html>

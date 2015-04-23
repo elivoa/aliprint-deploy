@@ -1,5 +1,5 @@
-<html t:type="layout" xmlns:p="tapestry:parameter"
-	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Alibaba Smart Print System">
+<html xmlns:p="tapestry:parameter" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd"
+	t:type="layout" title="Alibaba Smart Print System" page="index">
 <!--  TODO why here title passed is lowercased. -->
 
 <!-- Most of the page content, including <head>, <body>, etc. tags, comes from Layout.tml -->
