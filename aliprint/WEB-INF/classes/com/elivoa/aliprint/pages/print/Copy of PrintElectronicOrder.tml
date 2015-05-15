@@ -3,7 +3,12 @@
 	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" title="Print Order">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>圆通电子面单打印</title>
+<title>圆通快递单</title>
+<!-- 
+<link href="../../css/pages/express-order-print.css" rel="stylesheet" type="text/css">
+<link href="../../css/pages/express-order-print.css" rel="stylesheet" type="text/css"
+	media="print">
+-->
 </head>
 <body>
 	<div class="main-content">
@@ -29,7 +34,8 @@
 						</tr>
 						<tr>
 							<td colspan="2">
-								<p>寄件人：</p> <!--寄件人姓名--> <t:textfield value="agent.senderName" class="Prnt_all Prnt_name"></t:textfield>
+								<p>寄件人：</p> <!--寄件人姓名-->
+								<t:textfield value="agent.senderName" class="Prnt_all Prnt_name" ></t:textfield>
 								<!-- <div id="fromName" class="Prnt_all Prnt_name" contenteditable="true">${agent.senderName}</div> -->
 								<!--/寄件人姓名--> <!--寄件人地址-->
 								<div id="fromAddress" class="Prnt_all" contenteditable="true">

@@ -1,5 +1,5 @@
 <html t:type="layout" xmlns:t="http://tapestry.apache.org/schema/tapestry_5_1_0.xsd"
-	xmlns:p="tapestry:parameter" t:title="Error | AMiner.org">
+	xmlns:p="tapestry:parameter" t:title="Error | AMiner.org" needAuth="false">
 
 <head>
 <meta http-equiv="content-type" content="text/html; charset=utf-8" />

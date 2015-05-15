@@ -1,0 +1,13 @@
+@charset "utf-8";
+
+@media print {
+	.noprint {
+		display: none;
+	}
+}
+
+.print-header1 {
+	height: 16mm;
+	width: 99mm;
+	border: 1px;
+}

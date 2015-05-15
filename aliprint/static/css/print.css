@@ -1,0 +1,69 @@
+@media print {
+	.noprint {
+		display: none;
+	}
+}
+
+.print-header1 {
+	height: 16mm;
+	width: 99mm;
+	border: 1px;
+}
+
+.print-header2 {
+	height: 18mm;
+	width: 99mm;
+	border: 1px;
+}
+
+.print-font {
+	font-family: STKaiti;
+	font-size: 12em;
+}
+
+.print-header1 img {
+	height: 12mm;
+}
+
+.float-rigth {
+	float: right;
+}
+
+.table1 table {
+	width: 99mm;
+	height: 87mm;
+	border-style: dotted;
+	border-bottom: 1px;
+}
+
+.table2 table {
+	width: 99mm;
+	height: 58mm;
+	border-style: dotted;
+	border-bottom: 1px;
+}
+
+table th, td {
+	border: 1px solid black;
+}
+
+.main-content {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	margin: 5px
+}
+
+.main-rigth {
+	flex: 1;
+	-webkit-flex: 1;
+	border: 1px solid #ccc;
+	padding-top: 1px;
+}
+
+.main-left {
+	flex: 3.4;
+	-webkit-flex: 3.4;
+	border: 1px solid #ccc;
+	margin-left: 5px;
+}

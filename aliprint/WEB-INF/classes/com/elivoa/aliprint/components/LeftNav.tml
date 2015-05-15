@@ -6,6 +6,8 @@
 		<li class="${linkClass('sellagent')}"><t:pagelink page="sellagent">我的代理</t:pagelink></li>
 		<li class="${linkClass('account-settings')}"><t:pagelink page="product/names">账号设置</t:pagelink></li>
 		<li class="${linkClass('order-sync')}"><t:pagelink page="order/sync">订单同步状态</t:pagelink></li>
+		<li class="${linkClass('print-electronichistory')}"><t:pagelink
+				page="print/electronichistory">**电子面单历史**</t:pagelink></li>
 		<li class="${linkClass('test')}"><t:pagelink page="test">测试页面</t:pagelink></li>
 	</ul>
 </t:content>

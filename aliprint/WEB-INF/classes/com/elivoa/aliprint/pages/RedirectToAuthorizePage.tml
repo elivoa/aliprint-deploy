@@ -1,0 +1,7 @@
+<html t:type="layout" title="Redirect" needAuth="false"
+	xmlns:t="http://tapestry.apache.org/schema/tapestry_5_3.xsd" xmlns:p="tapestry:parameter">
+
+<p>Redirect to Authorization page.</p>
+
+<div></div>
+</html>

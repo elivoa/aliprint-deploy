@@ -1,0 +1,23 @@
+.main-content {
+	display: flex;
+	display: -ms-flexbox;
+	display: -webkit-flex;
+	margin: 5px
+}
+
+.main-left {
+	flex: 1;
+	-webkit-flex: 1;
+	border: 1px solid #ccc;
+}
+
+.main-right {
+	flex: 3.4;
+	-webkit-flex: 3.4;
+	border: 1px solid #ccc;
+	margin-left: 5px;
+}
+
+.main-height {
+	height: 720px;
+}
